@@ -1,0 +1,35 @@
+greet =["Hi! What flavors do you have?","hi","hello"]
+flavour =["chocolate","vannila","Strawberry","Mint Chocolate Chip","blackcurrent"]
+size =["baby","medium","small","regular","large"]
+topping =["chocochip","no",]
+response =["did't want","no thanks"]
+money =["card","cash","scan"]
+def get_response(user_input):
+    user_input = user_input.lower()
+    if any(greeting in user_input for greeting in greet):
+        return "we have Vanilla,Chocolate,Strawberry,Mint Chocolate Chip,blackcurrent Would you like to know more about any specific flavor?"
+    elif any(flavours in user_input for flavours in flavour):
+        return "great!,which size do you like to have"
+    elif any(sizes in user_input for sizes in size):
+        return "Sure! Would you like any toppings?"
+    elif any(toppings in user_input for toppings in topping):
+        return "ok,anything else"
+    elif any(responed in user_input for responed in response):
+        return "your bill is 70 rupees, card or cash..?"
+    elif any(moneying in user_input for moneying in money):
+        return "you welcome!,enjoy your icecream"
+    else:
+        return" I'm sorry, I didn't understand that. Can you please repeat?"
+def chat():
+    print("Chatbot: Hello! Welcome to the sweet home IceCream Shop.what do you like to have")
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == 'exit':
+            print("Chatbot: Goodbye! Have a sweet day!")
+            break
+        response = get_response(user_input)
+        print(f"Chatbot: {response}")
+
+_name_="_main_"
+if _name_ == "_main_":
+    chat()
